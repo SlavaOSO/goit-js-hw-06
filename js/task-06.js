@@ -1,14 +1,18 @@
 const inpytOnValid = document.querySelector('#validation-input');
 
 const onChekInput = (e) => {
-    if (e.currentTarget.value.length >= inpytOnValid.dataset.length) {
-        inpytOnValid.classList.add('valid');
-        return inpytOnValid.classList.remove('invalid');
+    if (e.currentTarget.value.length === Number(inpytOnValid.dataset.length)) {
+    // if (e.currentTarget.value.length >= 6) {
+        console.log(e.currentTarget.value.length)
+        inpytOnValid.classList.remove('invalid');
+        return inpytOnValid.classList.add('valid');
     };
-        inpytOnValid.classList.add('invalid');
+    inpytOnValid.classList.remove('valid');
+    inpytOnValid.classList.add('invalid');
 };
 
 inpytOnValid.addEventListener('blur', onChekInput);
+
 
 // Напиши скрипт, который при потере фокуса на инпуте (событие blur), 
 // проверяет его содержимое на правильное количество введённых символов.
